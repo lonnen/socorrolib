@@ -1,7 +1,7 @@
 import mock
 from nose.tools import eq_, ok_, assert_raises
 from socorrolib.unittest.testbase import TestCase
-from socorrolib.processor.processor_app import ProcessorApp
+
 from configman import (
     class_converter,
     Namespace,
@@ -17,16 +17,6 @@ from socorrolib.app.socorro_app import (
     klass_to_pypath,
 )
 from socorrolib.app.for_application_defaults import ApplicationDefaultsProxy
-
-tag = ''
-
-#==============================================================================
-# used in tests below
-class MyProcessor(ProcessorApp):
-    def main(self):
-        global tag
-        tag = 'lars was here'
-        return "I'm a dummy main"
 
 
 #==============================================================================
@@ -200,73 +190,3 @@ class TestSocorroApp(TestCase):
                 eq_(kwargs['values_source_list'][1], {"a": 1})
                 eq_(kwargs['values_source_list'][2], {"b": 2})
                 eq_(result, 17)
-
-
-
-#==============================================================================
-class TestSocorroWelcomeApp(TestCase):
-
-    #--------------------------------------------------------------------------
-    def test_instantiation(self):
-        config = DotDict()
-        sa = SocorroWelcomeApp(config)
-        eq_(sa.config, config)
-        eq_(
-            sa.required_config.application.default,
-            None
-        )
-
-    #--------------------------------------------------------------------------
-    def test_app_replacement(self):
-        config = DotDict()
-        config.application = MyProcessor
-        config.number_of_submissions = 1
-
-        with mock.patch(
-            'socorrolib.app.socorro_app.command_line',
-            new={}
-        ) as mocked_command:
-            sa = SocorroWelcomeApp(config)
-            sa.main()
-            eq_(tag, 'lars was here')
-
-
-#--------------------------------------------------------------------------
-def test_klass_to_pypath_various_modules():
-    from socorrolib.processor.processor_app import ProcessorApp
-    eq_(
-        klass_to_pypath(ProcessorApp),
-        'socorrolib.processor.processor_app.ProcessorApp'
-    )
-
-
-#--------------------------------------------------------------------------
-def test_klass_to_pypath_a_faked_out_main():
-
-    # since we can't really get a class that reports its __module__ as
-    # being '__main__', we have to fake it with mocks.
-
-    fake_sys_modules = {
-        '__main__': '/some/bogus/path/socoro/processor/processor_app.py',
-    }
-    fake_sys_path = [
-        '', '/my/home/path', '/your/home/path', '/some/bogus/path',
-        '/elsewhere/'
-    ]
-
-    MockedMainClass = mock.Mock()
-    MockedMainClass.__module__ = '__main__'
-    MockedMainClass.__name__ = 'ProcessorApp'
-
-    with mock.patch(
-        'socorrolib.app.socorro_app.sys.modules',
-        new=fake_sys_modules
-    ):
-        with mock.patch(
-            'socorrolib.app.socorro_app.sys.path',
-            new=fake_sys_path
-        ):
-            eq_(
-                klass_to_pypath(ProcessorApp),
-                'socorrolib.processor.processor_app.ProcessorApp'
-            )
