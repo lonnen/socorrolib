@@ -4,8 +4,8 @@
 
 from mock import patch, call
 
-from  socorrolib.lib.util import DotDict, SilentFakeLogger
-from  socorrolib.lib.statistics import StatisticsForStatsd
+from socorrolib.lib.util import DotDict, SilentFakeLogger
+from socorrolib.lib.statistics import StatisticsForStatsd
 from socorrolib.unittest.testbase import TestCase
 
 

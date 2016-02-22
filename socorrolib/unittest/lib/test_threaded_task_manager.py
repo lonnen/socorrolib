@@ -7,10 +7,10 @@ import time
 from nose.tools import ok_, eq_
 from mock import Mock
 
-from   socorrolib.lib.threaded_task_manager import ThreadedTaskManager, \
+from socorrolib.lib.threaded_task_manager import ThreadedTaskManager, \
       ThreadedTaskManagerWithConfigSetup, \
       default_task_func
-from  socorrolib.lib.util import DotDict, SilentFakeLogger
+from socorrolib.lib.util import DotDict, SilentFakeLogger
 from socorrolib.unittest.testbase import TestCase
 
 

@@ -1,2 +1,11 @@
 move __init__.py test into a nose test
 move ignore tests into nose tests
+
+spurious threading related test failure:
+======================================================================
+FAIL: test_blocking_start_with_quit_on_empty (socorrolib.unittest.lib.test_threaded_task_manager.TestThreadedTaskManager)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/lonnen/repos/socorrolib/socorrolib/unittest/lib/test_threaded_task_manager.py", line 216, in test_blocking_start_with_quit_on_empty
+    10
+AssertionError: 8 != 10

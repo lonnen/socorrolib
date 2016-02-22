@@ -6,7 +6,7 @@ import uuid as uu
 import  socorrolib.lib.ooid as oo
 import datetime as dt
 
-from  socorrolib.lib.datetimeutil import utc_now, UTC
+from socorrolib.lib.datetimeutil import utc_now, UTC
 from socorrolib.unittest.testbase import TestCase
 
 class TestOoid(TestCase):

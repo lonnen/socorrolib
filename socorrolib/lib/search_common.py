@@ -11,7 +11,7 @@ import json
 
 import  socorrolib.lib.external_common as extern
 from socorrolib.external import BadArgumentError, MissingArgumentError
-from  socorrolib.lib import datetimeutil
+from socorrolib.lib import datetimeutil
 
 
 """Operators description:

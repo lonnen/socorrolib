@@ -5,7 +5,7 @@
 import os
 
 from contextlib import contextmanager
-from  socorrolib.lib.util import FakeLogger
+from socorrolib.lib.util import FakeLogger
 
 
 #--------------------------------------------------------------------------

@@ -6,7 +6,7 @@ import datetime
 
 from nose.tools import eq_, ok_
 
-from  socorrolib.lib import external_common, util
+from socorrolib.lib import external_common, util
 from socorrolib.unittest.testbase import TestCase
 
 

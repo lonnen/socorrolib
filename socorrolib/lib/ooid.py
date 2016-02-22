@@ -6,7 +6,7 @@
 import datetime as dt
 import uuid as uu
 
-from  socorrolib.lib.datetimeutil import utc_now, UTC
+from socorrolib.lib.datetimeutil import utc_now, UTC
 
 defaultDepth = 2
 oldHardDepth = 4

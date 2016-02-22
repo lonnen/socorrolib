@@ -8,8 +8,8 @@ from nose.tools import eq_, ok_, assert_raises
 from configman import ConfigurationManager, Namespace
 
 from socorrolib.external import BadArgumentError
-from  socorrolib.lib import datetimeutil
-from  socorrolib.lib.search_common import (
+from socorrolib.lib import datetimeutil
+from socorrolib.lib.search_common import (
     SearchBase, SearchParam, convert_to_type, get_parameters, restrict_fields
 )
 from socorrolib.unittest.testbase import TestCase

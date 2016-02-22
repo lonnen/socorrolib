@@ -76,7 +76,7 @@ from configman.converters import py_obj_to_str
 from configman.value_sources import type_handler_dispatch
 # register our new type handler with configman
 type_handler_dispatch[ApplicationDefaultsProxy].append(
-    socorrolib.app.for_application_defaults
+   socorrolib.app.for_application_defaults
 )
 
 #------------------------------------------------------------------------------

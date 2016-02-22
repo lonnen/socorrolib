@@ -8,7 +8,7 @@ from mock import Mock
 from configman.dotdict import DotDict
 from configman import Namespace
 
-from  socorrolib.lib import transform_rules
+from socorrolib.lib import transform_rules
 from socorrolib.unittest.testbase import TestCase
 
 

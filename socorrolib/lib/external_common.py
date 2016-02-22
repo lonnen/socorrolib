@@ -9,7 +9,7 @@ Common functions for external modules.
 import json
 
 from datetime import datetime, timedelta, date
-from  socorrolib.lib.util import DotDict
+from socorrolib.lib.util import DotDict
 
 import  socorrolib.lib.datetimeutil as dtutil
 
