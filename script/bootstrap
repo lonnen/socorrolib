@@ -1,0 +1,22 @@
+#! /bin/bash -ex
+
+source script/defaults
+
+if [ ! -d "$VIRTUAL_ENV" ]; then
+    virtualenv -p $PYTHON ${VIRTUAL_ENV}
+fi
+source "$VIRTUAL_ENV/bin/activate"
+
+# install dev + prod dependencies
+${VIRTUAL_ENV}/bin/python script/pipstrap
+
+${VIRTUAL_ENV}/bin/pip install --require-hashes -r requirements.txt
+
+# setup any unset test configs and databases without overwriting existing files
+pushd config
+for file in *.ini-dist; do
+    if [ ! -f `basename $file -dist` ]; then
+        cp $file `basename $file -dist`
+    fi
+done
+popd

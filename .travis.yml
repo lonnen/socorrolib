@@ -1,0 +1,38 @@
+sudo: no
+cache:
+  directories:
+    - $HOME/.cache/pip
+language: python
+python:
+  - "2.7"
+
+addons:
+  postgresql: "9.3"
+
+install:
+  - pip wheel -r test-requirements.txt
+  - pip install -r test-requirements.txt
+  - python setup.py install
+
+before_script:
+    - psql -c "create user test with encrypted password 'aPassword' superuser;" -U postgres
+    - psql -c 'create database socorro_test;' -U postgres
+    - psql -c 'create database socorro_integration_test;' -U postgres
+    - psql -c 'create database socorro_migration_test;' -U postgres
+
+script:
+  - nosetests socorrolib
+
+notifications:
+#  webhooks: http://leeroybot.lonnen.com/hubot/travis?room=%23breakpad
+
+
+# todo: deploy to pypi
+#deploy:
+#    provider: pypi
+#    user: lonnen
+#    password:
+#    on:
+#        repo:
+#        branch: master
+#distributions: "sdist bdist_wheel"

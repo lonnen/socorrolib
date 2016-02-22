@@ -1,0 +1,2 @@
+move __init__.py test into a nose test
+move ignore tests into nose tests
