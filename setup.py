@@ -24,6 +24,13 @@ def read(fname):
     with codecs.open(fpath, 'r', 'utf8') as fhandle:
         return fhandle.read().strip()
 
+def find_install_requires():
+    """
+    utility function to build a list of requirements from requirements.txt
+    """
+    return [x.strip().split()[0].strip() for x in
+            read('requirements.txt').splitlines()
+            if x.strip() and not x.startswith('#')]
 
 setup(
     name="socorrolib",
@@ -32,6 +39,7 @@ setup(
     license="MPL-2",
     author="mozilla socorro team and friends",
     packages=find_packages(),
+    install_requires=find_install_requires(),
     long_description=read("README.md"),
     classifiers=[
         "Development Status :: 1 - Planning",
