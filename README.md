@@ -1,6 +1,8 @@
 socorrolib
 -----------
 
+![Build Status](https://travis-ci.org/lonnen/socorrolib.svg)
+
 The common library of the socorro crash reporter system.
 
 Factoring out the common library is the first step to breaking up the mozilla/socorro monorepo, which contains multiple services as a historic quirk of Mozilla's development and deployment process.
