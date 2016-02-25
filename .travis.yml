@@ -1,29 +1,23 @@
-sudo: no
+sudo: false
 cache:
   directories:
-    - $HOME/.cache/pip
+  - $HOME/.cache/pip
 language: python
 python:
-  - "2.7"
-
+- '2.7'
 addons:
-  postgresql: "9.3"
-
+  postgresql: '9.3'
 install:
-  - python setup.py install
-
+- python setup.py install
 script:
-  - nosetests socorrolib
-
+- nosetests socorrolib
 notifications:
-#  webhooks: http://leeroybot.lonnen.com/hubot/travis?room=%23breakpad
-
-# todo: deploy to pypi
-#deploy:
-#    provider: pypi
-#    user: lonnen
-#    password:
-#    on:
-#        repo:
-#        branch: master
-#distributions: "sdist bdist_wheel"
+deploy:
+  provider: pypi
+  user: lonnen
+  password:
+    secure: KYpfXjn1Ko5bKI9jWKTQ47K+QYM97iT9XzqZ8JuSoDhytX5xOoUAQWsrVxEPxZRbFlZGcnCh/s5oSQPyruv7LTKlMKPfvb6sjy+D8vbXftLnoAwXTrKMkM+KKLDi0zLDSErsDlDWuX889xFE2ypJ79TPOeiMAryTE9ePbZRVOtHUU1S3W6vNKl9CjDpohxlxULxEzYDyBO08uFrOs5GfMGej3nZIM642MNrpy1RelSn6Kov8xmRGnfkZI4C43AjKi5AjoK0GAZFXzCiEXGkf3m4ejF6uGOMy819MOUz/xAdyK1ftQlNpgvuL1TLUbg/5ePu9pCLBH/p6G9LRa5vQfuAHvj20+Ql6dIuRx36tTj47MBfcXMYuX01Yk14p4BGZ1rdbd7xEHL0MHU5I21unpH7ZXgNrPUF4HGaOfzK9JXH/oS/5Ko838iRIYkScdrBH/ZTAwBjzzQppXq9Wlxjiqe88o3HCG4SprEXNb3W54EGsBRv7bb6SN6O3XFxu1aAtI1BCP8twns6KrpiCuZRU/ZV3eyczR8jFroEXwGOTkoPq8zTiuIoDBzn+XXafr7zl4OrmrvzoeEuwbJVdDOU/t4sM71Z0ffXsNYh51428IBBZGTkTNbImtkhCvJe4rCaKqHPwXAhg9iC736wg0o0G4guuFjdel2ntlv3QJ2+rcXk=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: mozilla/socorrolib
