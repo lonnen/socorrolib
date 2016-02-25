@@ -34,15 +34,16 @@ def find_install_requires():
 
 setup(
     name="socorrolib",
-    version="0.0.1",
-    description="the common library of the socorro crash reporter",
-    license="MPL-2",
+    version="0.1.0",
     author="mozilla socorro team and friends",
+    url="https://github.com/mozilla/socorrolib",
+    description="the common library of the socorro crash reporter",
+    long_description=read("README.md"),
+    license="MPL-2",
     packages=find_packages(),
     install_requires=find_install_requires(),
-    long_description=read("README.md"),
     classifiers=[
-        "Development Status :: 1 - Planning",
+        "Development Status :: 4 - Beta",
         "Environment :: Console",
         "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
         "Programming Language :: Python",
