@@ -28,4 +28,4 @@ nostests socorrolib.unittest.external.test_crashstorage_base:TestCase.TestBase
 
 ## making a release
 
-todo: travis automation to make a release
+Travis-CI ships releases to pypi whenever a tag is pushed. You'll want to bump the version number in `setup.py` before you try that.
