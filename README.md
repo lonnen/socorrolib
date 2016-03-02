@@ -1,7 +1,7 @@
 socorrolib
 -----------
 
-![Build Status](https://travis-ci.org/lonnen/socorrolib.svg)
+[![Build Status](https://travis-ci.org/mozilla/socorrolib.svg?branch=master)](https://travis-ci.org/mozilla/socorrolib)
 
 The common library of the socorro crash reporter system.
 
