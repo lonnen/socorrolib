@@ -14,7 +14,7 @@ Eventually this relationship will invert and socorro should use standard import 
 ## running tests
 
 ```
-pip install -r requirements
+pip install --require-hashes -r requirements.txt
 
 # all them tests
 nosetests socorrolib
