@@ -34,7 +34,7 @@ def find_install_requires():
 
 setup(
     name="socorrolib",
-    version="0.1.2",
+    version="0.2.0",
     author="mozilla socorro team and friends",
     url="https://github.com/mozilla/socorrolib",
     description="the common library of the socorro crash reporter",

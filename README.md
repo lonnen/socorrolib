@@ -7,7 +7,8 @@ The common library of the socorro crash reporter system.
 
 Factoring out the common library is the first step to breaking up the mozilla/socorro monorepo, which contains multiple services as a historic quirk of Mozilla's development and deployment process.
 
-Currently socorrolib is pinned to socorro revision: 8e9b1ca1c33f385d7c12fc844c7aa60075b33da4
+Currently socorrolib is pinned to socorro revision:
+1c485ce3e6e6b2839834ad8a9f184e407dc8c825
 
 Eventually this relationship will invert and socorro should use standard import tools to pin a version of socorrolib.
 
