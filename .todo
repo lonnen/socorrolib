@@ -1,5 +1,4 @@
-move __init__.py test into a nose test
-move ignore tests into nose tests
+move socorro build system bash tests into this module's node tests
 
 spurious threading related test failure:
 ======================================================================
