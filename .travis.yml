@@ -11,13 +11,13 @@ install:
 - python setup.py install
 script:
 - nosetests socorrolib
-notifications: 
+notifications:
 deploy:
   provider: pypi
   user: lonnen
   password:
     secure: C2BwuQLDpuuyNjmOAVg61eIfd1TtRDEhQFowdGTZ92ikmskSMch7WLAaS8jK9dYllQyuSKFvj9IuZYFZM+RsyFyeQAWtQJWDQ/6QNdevZ7XvsRqHImF3uiou8z4k6X24NVOocyQf+mOSFfjESkt3L1XrpQDKTbS8wzzQRE3CJ4y65lDDCP3Gc8+5wTwdYNzPaeCyBY7Z4IaH4+6PPNEdC+62ot0ekWoFUGbAAXBzeY6kiOukzKfxNpQrkj0+YlKeP3ka3LYidBRx51hI5QIaRvY0s215eChKJwMbvgUTIf9Hn+O6aWCeo4jYF6juL/Il7uxxeZjdf/eJDDZSVxsb6LeNDkYSO5tyOkklgbohIMQY0LwuBmpwGL11W0netY/0SmtdpY+xvQr3/C6klBongV1UyQc7qsOZAiV0IdPTkHITiZx6LJM4kwEVWVHCAREAYDFiNwD7EHJS2Ogu/m3aC7Y+LfWsyYW6PcDo1TJeEfX6FKraFjS1Y55MVYMFt8jYitwf2ivMUG/L5CZaBTWo0i30g74aCcPb8DMBxuzAhQWno9amy2SEzvohXxAYCpl1nIezYsK2ipCjGCRmW8d3myosBTuIxaOrCHMtTh8fDez029S1k+ovPeFPl+MIPaLjNV2SmAgzzUYYHT8smex/aLtBJcG72HtZcCQv9AK9IuQ=
   on:
-    tags: true
-    distributions: sdist bdist_wheel
     repo: mozilla/socorrolib
+    branch: master
+  distributions: "sdist bdist_wheel"
