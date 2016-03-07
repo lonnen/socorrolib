@@ -21,10 +21,6 @@ def strHoursToTimeDelta(hoursAsString):
     return datetime.timedelta(hours=int(hoursAsString))
 
 
-def timeDeltaToSeconds(td):
-    return td.days * 24 * 60 * 60 + td.seconds
-
-
 def utc_now():
     """Return a timezone aware datetime instance in UTC timezone
 
