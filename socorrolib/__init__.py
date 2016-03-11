@@ -1,3 +1,6 @@
 from pkg_resources import get_distribution
 
-__version__ = get_distribution('socorrolib').version
+try:
+    __version__ = get_distribution('socorrolib').version
+except DistributionNotFound:
+    __version__ = 'Please install this project with setup.py'
