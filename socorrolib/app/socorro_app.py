@@ -478,7 +478,7 @@ class SocorroWelcomeApp(SocorroApp):
         else:
             print (
                 "Welcome to Socorro.  To configure Socorro, please see "
-                "http://socorro.readthedocs.org/en/latest/\n"
+                "https://socorro.readthedocs.io/\n"
                 "use --help with this app to see what you can do here"
             )
 
