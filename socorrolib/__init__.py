@@ -1,4 +1,4 @@
-from pkg_resources import get_distribution
+from pkg_resources import get_distribution, DistributionNotFound
 
 try:
     __version__ = get_distribution('socorrolib').version
