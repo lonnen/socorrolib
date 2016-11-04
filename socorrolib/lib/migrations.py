@@ -12,6 +12,8 @@ defined in SQLAlchemy yet.
 import os
 import warnings
 
+import socorro
+
 
 def get_local_filepath(filename):
     """
@@ -21,14 +23,13 @@ def get_local_filepath(filename):
         $SOCORRO_PATH/socorrolib/external/postgresql/raw_sql/procs/
     """
     procs_dir = os.path.normpath(os.path.join(
-        __file__,
-        '../../',
+        socorro.__path__[0],
         'external/postgresql/raw_sql/procs'
     ))
     return os.path.join(procs_dir, filename)
 
 
-def load_stored_proc(op, filelist):
+def load_stored_proc(op, filelist, must_exist=False):
     """
     Takes the alembic op object as arguments and a list of files as arguments
     Load and run CREATE OR REPLACE function commands from files
@@ -39,7 +40,7 @@ def load_stored_proc(op, filelist):
         # an exception to be thrown. Some of the rollback scripts
         # would otherwise throw unhelpful exceptions when a SQL
         # file is removed from the repo.
-        if not os.path.isfile(sqlfile):
+        if not must_exist and not os.path.isfile(sqlfile):
             warnings.warn(
                 "Did not find %r. Continuing migration." % sqlfile,
                 UserWarning,
