@@ -1,7 +1,9 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+This has been folded back into the main socorro repo and is no deprecated.
+
 socorrolib
 -----------
-
-[![Build Status](https://travis-ci.org/mozilla/socorrolib.svg?branch=master)](https://travis-ci.org/mozilla/socorrolib)
 
 The common library of the socorro crash reporter system.
 
