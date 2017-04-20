@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 # http://www.eby-sarna.com/pipermail/peak/2010-May/003357.html:
 try:
     # pylint: disable=W0611,C0411
-    import multiprocessing
+    import multiprocessing  # noqa
 except ImportError:
     pass
 
@@ -24,6 +24,7 @@ def read(fname):
     with codecs.open(fpath, 'r', 'utf8') as fhandle:
         return fhandle.read().strip()
 
+
 def find_install_requires():
     """
     utility function to build a list of requirements from requirements.txt
@@ -34,7 +35,7 @@ def find_install_requires():
 
 setup(
     name="socorrolib",
-    version="0.2.3",
+    version="0.2.4",
     author="mozilla socorro team and friends",
     url="https://github.com/mozilla/socorrolib",
     description="the common library of the socorro crash reporter",
